@@ -6,7 +6,7 @@
 /*   By: nhirzel <marvin@42lausanne.ch>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 22:21:33 by nhirzel           #+#    #+#             */
-/*   Updated: 2021/11/11 16:03:57 by nhirzel          ###   ########.fr       */
+/*   Updated: 2021/11/11 19:02:18 by nhirzel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,15 @@
 void	ft_trie(const char *str, va_list args, int i, int *compt)
 {
 	if (str[i] == 'c')
-		ft_putchar_c((int)va_arg(args, int), compt);
+		ft_putchar_c(va_arg(args, int), compt);
 	if (str[i] == 's')
-		ft_putstr_c((char *)va_arg(args, const char *), compt);
+		ft_putstr_c(va_arg(args, char *), compt);
 	if (str[i] == 'i' || str[i] == 'd')
-		ft_putnbr_c((int)va_arg(args, int), compt);
+		ft_putnbr_c(va_arg(args, int), compt);
 	if (str[i] == '%')
 		ft_putchar_c('%', compt);
 	if (str[i] == 'u')
-		long_putnbr((unsigned int)va_arg(args, unsigned int), compt);
+		long_putnbr(va_arg(args, unsigned int), compt);
 	if (str[i] == 'x')
 		ft_ito(va_arg(args, unsigned int), compt, 'x');
 	if (str[i] == 'X')

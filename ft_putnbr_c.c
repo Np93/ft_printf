@@ -6,7 +6,7 @@
 /*   By: nhirzel <marvin@42lausanne.ch>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 15:16:41 by nhirzel           #+#    #+#             */
-/*   Updated: 2021/11/11 15:43:40 by nhirzel          ###   ########.fr       */
+/*   Updated: 2021/11/11 19:01:40 by nhirzel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,19 +39,11 @@ void	ft_putstr_c(char *s, int *compt)
 
 void	long_putnbr(unsigned int n, int *compt)
 {
-	if (n < 0)
+	if (n > 9)
 	{
-		ft_putchar_c('-', compt);
-		ft_putnbr_c(-n, compt);
+		long_putnbr(n / 10, compt);
 	}
-	else
-	{
-		if (n > 9)
-		{
-			ft_putnbr_c(n / 10, compt);
-		}
-		ft_putchar_c(48 + n % 10, compt);
-	}
+	ft_putchar_c(48 + n % 10, compt);
 }
 
 void	ft_putnbr_c(int n, int *compt)
